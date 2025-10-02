@@ -2,8 +2,12 @@
   "name": "git-code-author",
   "displayName": "Git Code Author",
   "description": "在编辑器左侧注释区展示每行的 Git 提交作者、时间与摘要。",
-  "version": "0.0.1",
-  "publisher": "codex",
+  "version": "0.0.2",
+  "publisher": "hlgmyl",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dev4java/git-code-author.git"
+  },
   "engines": {
     "vscode": "^1.84.0"
   },
@@ -20,7 +24,7 @@
     "commands": [
       {
         "command": "gitCodeAuthor.toggleBlame",
-        "title": "Annotate with Git Code Author"
+        "title": "%command.toggleBlame.title%"
       }
     ],
     "menus": {

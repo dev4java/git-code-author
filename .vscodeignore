@@ -1,0 +1,12 @@
+# Generated and development artifacts that should not ship with the VSIX
+node_modules/**
+.vscode/**
+.specstory/**
+.DS_Store
+*.map
+
+# Git helper files
+.gitignore
+
+# Uncomment if you prefer not to include lockfiles
+# package-lock.json
