@@ -1,0 +1,53 @@
+{
+  "name": "git-code-author",
+  "displayName": "Git Code Author",
+  "description": "在编辑器左侧注释区展示每行的 Git 提交作者、时间与摘要。",
+  "version": "0.0.1",
+  "publisher": "codex",
+  "engines": {
+    "vscode": "^1.84.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:gitCodeAuthor.toggleBlame",
+    "onCommand:gitCodeAuthor.enableBlame",
+    "onCommand:gitCodeAuthor.disableBlame"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "gitCodeAuthor.toggleBlame",
+        "title": "Annotate with Git Code Author"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "command": "gitCodeAuthor.toggleBlame",
+          "group": "navigation@100",
+          "when": "!gitCodeAuthor.isAnnotated"
+        },
+        {
+          "command": "gitCodeAuthor.toggleBlame",
+          "group": "navigation@100",
+          "when": "gitCodeAuthor.isAnnotated",
+          "icon": "$(check)"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "package": "vsce package",
+    "vscode:prepublish": "npm run compile"
+  },
+  "devDependencies": {
+    "@types/node": "^18.19.0",
+    "@types/vscode": "^1.84.0",
+    "typescript": "^5.3.3"
+  }
+}
